@@ -6,5 +6,7 @@ public class ColouredLogger {
 		consoleLogger.log(LogLevel.WARNING, "Hello World",null);
 		consoleLogger.log(LogLevel.ERROR, "Hello World",null);
 		consoleLogger.log(LogLevel.FATAL, "Hello World",null);
+		Logger logger= LoggerFactory.getLogger();
+		logger.log(LogLevel.DEBUG, "Hello World",null);
 	}
 }
