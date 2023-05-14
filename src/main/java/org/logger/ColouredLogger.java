@@ -1,5 +1,7 @@
 package org.logger;
 
+import org.logger.interfaces.Logger;
+
 public class ColouredLogger {
 	public static void main(String[] args) {
 		ConsoleLogger consoleLogger = new ConsoleLogger(LogLevel.DEBUG);

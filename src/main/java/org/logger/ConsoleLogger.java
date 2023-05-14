@@ -1,5 +1,7 @@
 package org.logger;
 
+import org.logger.interfaces.Logger;
+
 import java.util.Date;
 
 public class ConsoleLogger implements Logger {
