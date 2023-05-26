@@ -18,6 +18,7 @@ public class ConsoleLogger implements Logger {
 		this.logLevel = logLevel;
 	}
 
+
 	@Override
 	public void log(LogLevel level, String message, Throwable throwable) {
 		if (level.ordinal() < logLevel.ordinal()) {
