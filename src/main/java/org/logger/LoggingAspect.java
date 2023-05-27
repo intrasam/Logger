@@ -1,11 +1,12 @@
 package org.logger;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.logger.interfaces.Logger;
+
 
 @Aspect
 public class LoggingAspect {
@@ -14,16 +15,17 @@ public class LoggingAspect {
 	@Pointcut(value="@annotation(org.logger.interfaces.Monitor)")
 	public void logMethodExecution() {}
 
+
 	@Before("logMethodExecution()")
 	public void logMethodEntry(JoinPoint joinPoint) {
-		String className = joinPoint.getSignature().getDeclaringTypeName();
+		//String className = joinPoint.getSignature().getDeclaringTypeName();
 		String methodName = joinPoint.getSignature().getName();
-		logger.log(LogLevel.DEBUG, "Entering method: " + className + "." + methodName, null);
+		logger.log(LogLevel.DEBUG, "Entering method: "  + methodName, null);
 	}
-	@After("logMethodExecution()")
-	public void logMethodExit(JoinPoint joinPoint) {
-		String className = joinPoint.getSignature().getDeclaringTypeName();
+	@AfterReturning(pointcut="logMethodExecution()", returning="returnValue")
+	public void logMethodExit(JoinPoint joinPoint, Object returnValue) {
+
 		String methodName = joinPoint.getSignature().getName();
-		logger.log(LogLevel.DEBUG, "Exiting method: " + className + "." + methodName, null);
+		logger.log(LogLevel.DEBUG, "Exiting method: "  + methodName + " with return value: " + returnValue, null);
 	}
 }

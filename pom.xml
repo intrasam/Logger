@@ -1,49 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>my-application</artifactId>
+    <version>1.0.0</version>
 
-    <groupId>org.logger</groupId>
-    <artifactId>logger</artifactId>
-    <version>0.1-SNAPSHOT</version>
-<dependencies>
-    <dependency>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>aspectj-maven-plugin</artifactId>
-        <version>1.14.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjtools</artifactId>
-        <version>1.9.7</version>
-    </dependency>
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjmatcher</artifactId>
-        <version>1.9.7</version>
-    </dependency>
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjrt</artifactId>
-        <version>1.9.7</version>
-    </dependency>
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjweaver</artifactId>
-        <version>1.9.7</version>
-    </dependency>
-</dependencies>
+    <!-- Other project configurations -->
+
+    <dependencies>
+        <!-- Spring AOP Dependency -->
+
+        <!-- AspectJ Weaver Dependency -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.7</version>
+        </dependency>
+
+        <!-- Other dependencies -->
+    </dependencies>
+
     <build>
-        <!-- Other build configurations -->
-
         <plugins>
-            <!-- Other plugins -->
-
+            <!-- AspectJ Maven Plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
                 <version>1.14.0</version>
+                <configuration>
+                    <complianceLevel>16</complianceLevel>
+                    <source>16</source>
+                    <target>16</target>
+                    <weaveDependencies>
+                        <weaveDependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjrt</artifactId>
+                        </weaveDependency>
+                    </weaveDependencies>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -52,25 +48,10 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <complianceLevel>16.0</complianceLevel>
-                    <source>16.0</source>
-                    <target>16.0</target>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjtools</artifactId>
-                        <version>1.9.7</version>
-                    </dependency>
-                </dependencies>
             </plugin>
+
+            <!-- Other plugins -->
         </plugins>
     </build>
-    <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
 </project>

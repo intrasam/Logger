@@ -2,10 +2,13 @@ package org.logger;
 
 import org.logger.interfaces.Monitor;
 
+
 public class ColouredLogger {
 	@Monitor
-	public void method1(){
-		System.err.println("HelloWorld");
+	public int method1(){
+		int x=10;
+		int y=20;
+		return (x+y);
 	}
 
 	public void method2(){
@@ -13,7 +16,8 @@ public class ColouredLogger {
 	}
 	public static void main(String[] args) {
 		ColouredLogger colouredLogger=new ColouredLogger();
-		colouredLogger.method1();
+		int result=colouredLogger.method1();
 		colouredLogger.method2();
+		System.out.println(result);
 	}
 }
