@@ -10,7 +10,7 @@ import org.logger.interfaces.Logger;
 public class LoggingAspect {
 	private final Logger logger = LoggerFactory.getLogger();
 
-	@Pointcut("execution(* *.*(..))")
+	@Pointcut(value="@annotation(org.logger.interfaces.Monitor)")
 	public void logMethodExecution() {}
 
 	@Before("logMethodExecution()")
