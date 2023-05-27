@@ -1,8 +1,0 @@
-<!DOCTYPE aspectj>
-<aspectj>
-    <weaver options="-Xset:weaveJavaxPackages=true" />
-    <aspects>
-        <aspect name="org.logger.LoggingAspect" />
-    </aspects>
-</aspectj>
-
