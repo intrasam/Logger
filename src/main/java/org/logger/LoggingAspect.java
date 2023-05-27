@@ -1,6 +1,7 @@
 package org.logger;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -18,5 +19,11 @@ public class LoggingAspect {
 		String className = joinPoint.getSignature().getDeclaringTypeName();
 		String methodName = joinPoint.getSignature().getName();
 		logger.log(LogLevel.DEBUG, "Entering method: " + className + "." + methodName, null);
+	}
+	@After("logMethodExecution()")
+	public void logMethodExit(JoinPoint joinPoint) {
+		String className = joinPoint.getSignature().getDeclaringTypeName();
+		String methodName = joinPoint.getSignature().getName();
+		logger.log(LogLevel.DEBUG, "Exiting method: " + className + "." + methodName, null);
 	}
 }
