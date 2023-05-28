@@ -14,10 +14,4 @@ public class ColouredLogger {
 	public void method2(){
 		System.out.println("HelloWorld");
 	}
-	public static void main(String[] args) {
-		ColouredLogger colouredLogger=new ColouredLogger();
-		int result=colouredLogger.method1();
-		colouredLogger.method2();
-		System.out.println(result);
-	}
 }

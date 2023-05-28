@@ -19,7 +19,6 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>1.9.7</version>
-
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -41,6 +40,12 @@
                 <complianceLevel>16</complianceLevel>
                 <source>16</source>
                 <target>16</target>
+                <weaveDependencies>
+                    <weaveDependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                    </weaveDependency>
+                </weaveDependencies>
                 <showWeaveInfo>true</showWeaveInfo>
                 <verbose>true</verbose>
                 <Xlint>ignore</Xlint>
