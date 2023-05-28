@@ -1,10 +1,10 @@
 package org.logger;
 
-import org.logger.interfaces.Monitor;
+import org.logger.interfaces.Log;
 
 
 public class ColouredLogger {
-	@Monitor
+	@Log
 	public int method1(){
 		int x=10;
 		int y=20;

@@ -12,7 +12,7 @@ import org.logger.interfaces.Logger;
 public class LoggingAspect {
 	private final Logger logger = LoggerFactory.getLogger();
 
-	@Pointcut(value="@annotation(org.logger.interfaces.Monitor)")
+	@Pointcut(value="@annotation(org.logger.interfaces.Log) && !within(org.logger.*)")
 	public void logMethodExecution() {}
 
 
