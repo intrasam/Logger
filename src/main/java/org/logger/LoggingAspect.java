@@ -3,12 +3,17 @@ package org.logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.logger.interfaces.Logger;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
+import org.springframework.core.Ordered;
+import org.springframework.stereotype.Component;
 
 @Aspect
+@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
+@Component
 public class LoggingAspect {
 	private final Logger logger = LoggerFactory.getLogger();
 
-	@Pointcut("@annotation(org.logger.interfaces.Log) || @within(org.logger.interfaces.Log)")
+	@Pointcut("within(@org.logger.interfaces.Log *)")
 	public void logMethodExecution() {}
 
 	@Before("logMethodExecution()")
