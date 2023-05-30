@@ -23,7 +23,7 @@ public class LoggingAspect {
 	public void logMethodExit(JoinPoint joinPoint, Object returnValue) {
 		String className = joinPoint.getSignature().getDeclaringTypeName();
 		String methodName = joinPoint.getSignature().getName();
-		logger.log(LogLevel.DEBUG, "Exiting method: " + className + "." + methodName + " with return value: " + returnValue, null);
+		logger.log(LogLevel.INFO, "Exiting method: " + className + "." + methodName + " with return value: " + returnValue, null);
 	}
 	@AfterThrowing(pointcut="logMethodExecution()", throwing="exception")
 	public void logMethodException(JoinPoint joinPoint, Throwable exception) {
