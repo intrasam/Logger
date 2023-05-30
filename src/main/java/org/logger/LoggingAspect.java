@@ -8,7 +8,7 @@ import org.logger.interfaces.Logger;
 public class LoggingAspect {
 	private final Logger logger = LoggerFactory.getLogger();
 
-	@Pointcut("@within(org.logger.interfaces.Log) || @annotation(org.logger.interfaces.Log)")
+	@Pointcut("@annotation(org.logger.interfaces.Log) || @within(org.logger.interfaces.Log)")
 	public void logMethodExecution() {}
 
 	@Before("logMethodExecution()")
