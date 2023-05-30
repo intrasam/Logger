@@ -48,12 +48,6 @@
                     <Xlint>ignore</Xlint>
                     <showWeaveInfo>true</showWeaveInfo>
                     <verbose>true</verbose>
-                    <aspectLibraries>
-                        <aspectLibrary>
-                            <groupId>io.github.intrasam</groupId>
-                            <artifactId>Logger</artifactId>
-                        </aspectLibrary>
-                    </aspectLibraries>
                 </configuration>
                 <executions>
                     <execution>
