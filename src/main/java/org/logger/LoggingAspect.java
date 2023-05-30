@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.jetbrains.annotations.NotNull;
 import org.logger.interfaces.Logger;
 
 import java.lang.reflect.Method;
@@ -45,7 +44,7 @@ public class LoggingAspect {
 			logger.log(LogLevel.FATAL, "Exception thrown in method: " + className + "." + methodName, exception);
 		}
 	}
-	private boolean isAlreadyLogged(@NotNull JoinPoint joinPoint) {
+	private boolean isAlreadyLogged( JoinPoint joinPoint) {
 		// Check for the presence of logging annotations on the class
 		Class<?> targetClass = joinPoint.getClass();
 		MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();

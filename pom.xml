@@ -40,12 +40,6 @@
                 <!-- Add exclusions for other SLF4J related dependencies if needed -->
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
 
 
         <!-- Other dependencies -->
