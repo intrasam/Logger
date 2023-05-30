@@ -4,6 +4,7 @@
     </aspects>
 
     <weaver options="-verbose">
+        <include within="org.logger.*"/>
     </weaver>
 
     <declare precedence="org.logger.LoggingAspect, *"/>
