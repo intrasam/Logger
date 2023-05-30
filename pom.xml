@@ -21,24 +21,9 @@
 
         <!-- AspectJ Weaver Dependency -->
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.9.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.intrasam</groupId>
             <artifactId>Logger</artifactId>
-            <version>v0.8</version>
+            <version>v0.8.1</version>
         </dependency>
 
 
@@ -66,8 +51,8 @@
                             <Xlint>ignore</Xlint>
                             <encoding>UTF-8</encoding>
                             <weaveDirectories>
-                                <weaveDirectory>${project.build.outputDirectory}</weaveDirectory>
-                            </weaveDirectories>
+                            <weaveDirectory>${project.build.sourceDirectory}/org/logger</weaveDirectory>
+                        </weaveDirectories>
                             <aspectLibraries>
                                 <aspectLibrary>
                                     <groupId>com.github.intrasam</groupId>
